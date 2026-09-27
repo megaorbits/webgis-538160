@@ -75,7 +75,5 @@ The latitude and longitude may have been entered in the wrong order. Leaflet exp
 ## Final URLs
 
 **GitHub Repository:**  
-Paste your repository URL here.
+[Paste your repository URL here.](https://github.com/megaorbits/webgis-538160/tree/main)
 
-**GitHub Pages:**  
-Paste your live GitHub Pages URL here.
