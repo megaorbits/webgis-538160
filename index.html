@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Muhammad Ahmad - Web GIS Lab 01</title>
+
+<link rel="stylesheet"
+href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<style>
+body {
+    font-family: system-ui, sans-serif;
+    margin: 0;
+    padding: 30px;
+    background: linear-gradient(135deg, #eef7ff, #f4f1ff);
+    color: #1f2937;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.header {
+    background: linear-gradient(135deg, #0b5ed7, #5b3cc4);
+    color: white;
+    padding: 25px 30px;
+    border-radius: 14px;
+    margin-bottom: 22px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+h1 {
+    margin: 0 0 8px;
+    font-size: 30px;
+}
+
+.subtitle {
+    margin: 4px 0;
+    font-size: 16px;
+    opacity: 0.95;
+}
+
+.student-info {
+    margin-top: 14px;
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    padding: 9px 14px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.map-card {
+    background: white;
+    padding: 15px;
+    border-radius: 14px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.10);
+    border-top: 5px solid #0b5ed7;
+}
+
+.map-title {
+    margin: 5px 5px 12px;
+    color: #0b5ed7;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+#map {
+    height: 480px;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 18px;
+    color: #64748b;
+    font-size: 13px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <h1>Muhammad Ahmad</h1>
+
+        <p class="subtitle">
+            Web GIS — Laboratory 01
+        </p>
+
+        <p class="subtitle">
+            Institute of Geographical Information Systems (IGIS)
+        </p>
+
+        <p class="subtitle">
+            School of Civil and Environmental Engineering (SCEE), NUST
+        </p>
+
+        <div class="student-info">
+            Roll No: <strong>538150</strong>
+        </div>
+    </div>
+
+    <div class="map-card">
+
+        <div class="map-title">
+            Interactive Map of Islamabad
+        </div>
+
+        <div id="map"></div>
+
+    </div>
+
+    <div class="footer">
+        Web GIS Lab 01 • IGIS/SCEE/NUST
+    </div>
+
+</div>
+
+<script>
+
+const map = L.map('map').setView([33.6844, 73.0479], 12);
+
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; OpenStreetMap contributors'
+}).addTo(map);
+
+L.marker([33.6423, 72.9906])
+    .addTo(map)
+    .bindPopup('NUST H-12, Islamabad')
+    .openPopup();
+
+</script>
+
+</body>
+</html>
